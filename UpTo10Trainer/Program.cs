@@ -4,10 +4,12 @@ using QuestPDF.Infrastructure;
 
 const int howMany = 51;
 const int sheetNumber = 1;
+
 var desktopDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); 
+
 Random random = new ();
 
-Console.WriteLine("Okay, let's create a sheet...");
+Console.WriteLine("Okay, let's create an exercise sheet...");
 
 List<(int left, int right)> tasks = [];
 
@@ -33,7 +35,7 @@ Document.Create(container =>
         {
             column.Spacing(8);
             column.Item().Height(5);
-
+            
             column.Item().Row(row =>
             {
                 row.RelativeItem().Column(PickTasks(1, 17));
